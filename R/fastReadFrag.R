@@ -6,7 +6,7 @@ fastReadFrag <- function(in.file, date, plate, long = FALSE,
                          keep.missing = FALSE){
   if(is.data.frame(in.file))
     {
-    GMDdata <- in.file
+    GMdata <- in.file
     } else {
           GMdata <- read.table(file = in.file, sep = "\t", header = TRUE)
           }
