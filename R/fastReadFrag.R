@@ -4,7 +4,12 @@
 
 fastReadFrag <- function(in.file, date, plate, long = FALSE, 
                          keep.missing = FALSE){
-  GMdata <- read.table(file = in.file, sep = "\t", header = TRUE)
+  if(is.data.frame(in.file))
+    {
+    GMDdata <- in.file
+    } else {
+          GMdata <- read.table(file = in.file, sep = "\t", header = TRUE)
+          }
   if(!long){
     TAB <- apply(GMdata, 1, function(x){
       if(is.na(x[4])){
