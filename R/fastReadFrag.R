@@ -1,6 +1,6 @@
 #' A rewrite of the read.frag.sizes function from the MsatAllele package
 #' 
-#' Kevin Keenan, 2014
+#' Genuar Núñez Vega, 2016
 
 fastReadFrag <- function(in.file, date, plate, long = FALSE, 
                          keep.missing = FALSE){
