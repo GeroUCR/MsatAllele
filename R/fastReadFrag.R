@@ -37,7 +37,10 @@ fastReadFrag <- function(in.file, date, plate, long = FALSE,
   MS <- apply(TAB, 1, function(x) any(is.na(x)))
   colnames(TAB) <- c("Marker", "Sample", "Fragment", "Date", "Plate")
   TAB <- as.data.frame(TAB)
-  TAB$Sample <- factor(TAB$Sample, levels(GMdata$Sample.Name))
+  # TAB$Sample <- factor(TAB$Sample, levels(GMdata$Sample.Name)) # Aqui se asumen que la columna con los ID se llama 
+                                                                 # Sample.Name, pero el más mínimo cambio de algún 
+                                                                 # caracter altera el resultado. Por eso lo cambio.
+  TAB$Sample <- factor(TAB$Sample, levels(GMdata[,1])) 
   TAB$Fragment <- as.numeric(levels(TAB$Fragment))[TAB$Fragment]
   if(!keep.missing){
     TAB <- TAB[!MS, ] 
