@@ -3,7 +3,8 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{ Reads tab delimited text files with input fragment sizes creates a R data base }
 \description{
-  Reads input text files with continuous fragment size data and creates an R data base.
+  Transform a typical GeneMarker Table with two columns per marker and many markers in a input data.frame in
+  order to be reading in a fastReadFrag command, ie. a MsatAllele format.
 }
 \usage{
 df2msatallele(placa.multiplex)
